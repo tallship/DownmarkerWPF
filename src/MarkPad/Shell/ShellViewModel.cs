@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Windows.Shell;
 using Caliburn.Micro;
 using MarkPad.Document;
@@ -31,6 +32,13 @@ namespace MarkPad.Shell
             this.settingsCreator = settingsCreator;
 
             this.ActivateItem(mdi);
+        }
+
+        protected override void OnActivate()
+        {
+            base.OnActivate();
+
+            HandleCommandLineArgs(Environment.GetCommandLineArgs().Skip(1).ToArray());
         }
 
         public override string DisplayName
@@ -104,13 +112,18 @@ namespace MarkPad.Shell
             windowService.ShowDialog(settingsCreator());
         }
 
+        private void HandleCommandLineArgs(string[] args)
+        {
+            if (args.Length == 1)
+            {
+                if (File.Exists(args[0]) && Path.GetExtension(args[0]) == ".md")
+                    OpenDocument(args[0]);
+            }
+        }
+
         public void Handle(AppStartedEvent message)
         {
-            if (message.Args.Length == 1)
-            {
-                if (File.Exists(message.Args[0]) && Path.GetExtension(message.Args[0]) == ".md")
-                    OpenDocument(message.Args[0]);
-            }
+            HandleCommandLineArgs(message.Args);
         }
     }
 }
