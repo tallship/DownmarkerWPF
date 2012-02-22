@@ -10,6 +10,7 @@ using MarkPad.Metaweblog;
 using MarkPad.OpenFromWeb;
 using MarkPad.PublishDetails;
 using MarkPad.Services.Interfaces;
+using MarkPad.ImportSnippet;
 using MarkPad.Settings;
 using Ookii.Dialogs.Wpf;
 
@@ -140,6 +141,12 @@ namespace MarkPad.Shell
         public void ShowAbout()
         {
             windowManager.ShowDialog(aboutCreator());
+        }
+
+        public void ImportSnippet()
+        {
+            ImportSnippetView v = new ImportSnippetView();
+            v.Show();
         }
 
         public void ToggleWebView()

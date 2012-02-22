@@ -136,6 +136,9 @@
       <DependentUpon>HyperlinkEditorView.xaml</DependentUpon>
     </Compile>
     <Compile Include="HyperlinkEditor\HyperlinkEditorViewModel.cs" />
+    <Compile Include="ImportSnippet\ImportSnippetView.xaml.cs">
+      <DependentUpon>ImportSnippetView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="OpenFromWeb\Entry.cs" />
     <Compile Include="Settings\FetchedBlogInfo.cs" />
     <Compile Include="Metaweblog\Generated\MetaWeblog.generated.cs">
@@ -147,6 +150,7 @@
     <Compile Include="Metaweblog\MetaWeblog.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ImportSnippet\ImportSnippetModel.cs" />
     <Compile Include="SingleInstance.cs" />
     <Compile Include="Document\FormattingCommands.cs" />
     <Compile Include="Framework\ObjectExtensions.cs" />
@@ -213,6 +217,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="HyperlinkEditor\HyperlinkEditorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImportSnippet\ImportSnippetView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

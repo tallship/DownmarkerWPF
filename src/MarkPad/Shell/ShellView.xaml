@@ -197,6 +197,7 @@
                 <Button x:Name="NewJekyllDocument" Content="NEW JEKYLL PAGE" />
                 <Button x:Name="OpenDocument" Content="OPEN" />
                 <Button x:Name="OpenFromWeb" Content="OPEN FROM WEB" />
+                <Button x:Name="ImportSnippet" Content="IMPORT SNIPPET" />
                 <Button x:Name="SaveDocument" Content="SAVE" />
                 <Button x:Name="SaveAllDocuments" Content="SAVE ALL" />
                 <Button x:Name="PrintDocument" Content="PRINT" />
